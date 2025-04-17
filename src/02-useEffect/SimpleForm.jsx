@@ -1,0 +1,54 @@
+import { useEffect, useState } from "react";
+
+export const SimpleForm = () => {
+  const [formState, setFormState] = useState({
+    username: "and19",
+    email: "andres@email.com",
+  });
+
+  const { username, email } = formState;
+
+  const onInputChange = ({ target }) => {
+    const { name, value } = target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  useEffect(() => {
+    console.log("useEffect called!");
+  }, []);
+
+  useEffect(() => {
+    console.log("formState changed!");
+  }, [formState]);
+
+  useEffect(() => {
+    console.log("email changed!");
+  }, [email]);
+
+  return (
+    <>
+      <h1>SimpleForm</h1>
+      <hr />
+
+      <input
+        className="form-control"
+        placeholder="Username"
+        name="username"
+        type="text"
+        value={username}
+        onChange={onInputChange}
+      />
+      <input
+        className="form-control mt-2"
+        placeholder="andres@email.com"
+        name="email"
+        type="text"
+        value={email}
+        onChange={onInputChange}
+      />
+    </>
+  );
+};
