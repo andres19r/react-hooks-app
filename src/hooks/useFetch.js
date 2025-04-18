@@ -26,7 +26,7 @@ export const useFetch = (url) => {
     const resp = await fetch(url);
 
     // sleep
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // await new Promise((resolve) => setTimeout(resolve, 1500));
 
     if (!resp.ok) {
       setState({
