@@ -20,14 +20,37 @@ export const TodoApp = () => {
 
   return (
     <>
-      <h1>Todo App</h1>
+      <h1>
+        Todo App (10) - <small>pending: 2</small>
+      </h1>
       <hr />
 
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </ul>
+      <div className="row">
+        <div className="col-7">
+          <ul className="list-group">
+            <li className="list-group-item d-flex justify-content-between">
+              <span className="align-self-center">Item 1</span>
+              <button className="btn btn-outline-danger">Delete</button>
+            </li>
+          </ul>
+        </div>
+
+        <div className="col-5">
+          <h4>Add TODO</h4>
+          <hr />
+
+          <form>
+            <input
+              type="text"
+              placeholder="New todo"
+              className="form-control"
+            />
+            <button className="btn btn-primary mt-1" type="submit">
+              Add
+            </button>
+          </form>
+        </div>
+      </div>
     </>
   );
 };
