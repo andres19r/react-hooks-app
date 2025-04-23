@@ -2,11 +2,13 @@ import { Navigate, Route, Routes } from "react-router";
 import { HomePage } from "./HomePage";
 import { LoginPage } from "./LoginPage";
 import { AboutPage } from "./AboutPage";
+import { Navbar } from "./Navbar";
 
 export const MainApp = () => {
   return (
     <>
       <h1>Main App</h1>
+      <Navbar />
       <hr />
 
       <Routes>
